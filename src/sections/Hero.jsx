@@ -1,65 +1,92 @@
+import { Button } from '@/components/Button'
+import { ArrowUpRight, ChevronDown } from 'lucide-react'
+
+const skills = [
+  "Língua Portuguesa",
+  "Redação",
+  "Língua Inglesa",
+  "Literatura",
+  "Gramática",
+  "Produção Textual",
+];
+
 export const Hero = () => {
   return (
-    <section
-      id="hero"
-      className="relative min-h-screen overflow-hidden"
-      aria-label="Eliseu Milanês — Language Teacher"
-    >
-      {/* Mobile: smaller centered image. Desktop: right-aligned ~50–70% */}
-      <div
-        className="
-        pointer-events-none
-        absolute
-        bottom-0
-        left-1/2
-        -translate-x-1/2
-        w-full
-        h-[90%]
-        
-        lg:top-0
-        lg:right-0
-        lg:left-auto
-        lg:bottom-auto
-        lg:translate-x-0
-        lg:w-[70%]
-        lg:h-full">
-        <img
-          src="/eliseu_profile.png"
-          alt="Eliseu Milanês"
-          className="size-full object-cover object-top animate-fade-in lg:hidden"
-          style={{ animationDelay: '200ms' }}
-          onError={(event) => {
-            event.currentTarget.style.visibility = 'hidden'
-          }}
-        />
-        <img
-          src="/kojima (1).png"
-          alt="Eliseu Milanês"
-          className="hidden size-full object-cover object-top animate-fade-in lg:block"
-          style={{ animationDelay: '200ms' }}
-          onError={(event) => {
-            event.currentTarget.style.visibility = 'hidden'
-          }}
-        />
+    <section className="relative min-h-screen lg:h-screen flex flex-col overflow-hidden pt-28 lg:pt-24 pb-20 lg:pb-6">
+      {/* Content */}
+      <div className="container mx-auto px-3 flex-1 flex flex-col justify-center relative z-10 lg:min-h-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-16 items-center">
+          {/* Left Content - Text */}
+          <div className="space-y-8 lg:space-y-8">
+            <div className="animate-fade-in">
+              <span className="inline-flex items-center gap-2 px-8 py-2 rounded-full neo-soft neo-text text-sm text-secondary glow-text font-semibold">
+                <span className="w-2 h-2 bg-secondary rounded-full animate-pulse" />
+                Language Arts Educator
+              </span>
+            </div>
+
+            {/* Headline */}
+            <div className="space-y-4 lg:space-y-3">
+              <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold leading-tight animate-fade-in animation-delay-200">
+                Entre <span className="font-bold">palavras</span> e <span className="text-secondary glow-text">ideias</span>
+                <br />
+                a educação ganha <span className="font-serif text-accent italic font-bold">sentido</span>.
+              </h1>
+              <p className="text-lg lg:text-base text-muted-foreground/70 max-w-lg animate-fade-in animation-delay-400">
+                Professor de Língua Portuguesa e Inglesa, apaixonado pela educação, literatura e formação do pensamento crítico. Sua prática une conhecimento, diálogo e sensibilidade para tornar o aprendizado uma experiência significativa.
+              </p>
+            </div>
+
+            <div>
+              <Button size="lg"><span className="hover:underline hover:decoration-2 hover:underline-offset-4">Entrar em Contato</span> <ArrowUpRight className='w-5 h-5' /></Button>
+            </div>
+          </div>
+
+          {/* Right Content - Profile Pic */}
+          <div className='relative animate-fade-in animation-delay-300'>
+            <div className='relative max-w-90 max-h-110 mx-auto'>
+              <div className='relative neo rounded-4xl lg:h-full'>
+                <img
+                  src='/eliseu-wbackground.png'
+                  alt='Eliseu Milanês'
+                  className='w-full lg:w-auto lg:h-full aspect-[4/5] object-cover rounded-4xl'
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      {/* Mobile: fade down into white behind text. Desktop: side fade */}
-      <div
-        className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-white from-15% via-white/85 via-25% to-transparent to-50% md:bg-gradient-to-r md:from-background/70 md:via-background/25 md:to-transparent md:from-0% md:via-35% md:to-70% lg:from-transparent lg:via-transparent"
-        aria-hidden
-      />
+      {/* Skills */}
+      <div className="shrink-0 mt-16 lg:mt-0 animate-fade-in animation-delay-600">
+        <div className="relative overflow-hidden">
+          <div
+            className="absolute left-0 top-0 bottom-0 w-32
+         bg-gradient-to-r from-background to-transparent z-10"
+          />
+          <div
+            className="absolute right-0 top-0 bottom-0 w-32
+         bg-gradient-to-l from-background to-transparent z-10"
+          />
+          <div className="flex w-max animate-marquee">
+            {[...skills, ...skills, ...skills].map((skill, idx) => (
+              <div key={idx} className="flex-shrink-0 px-8 py-4 lg:py-3">
+                <span className="text-xl lg:text-lg font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">
+                  {skill}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
-      {/* Mobile: bottom-left. Desktop: vertically centered */}
-      <div className="absolute inset-0 z-10 flex flex-col items-start justify-end px-6 pb-10 md:relative md:min-h-screen md:max-w-2xl md:justify-center md:px-10 md:pb-28 md:pt-28 lg:max-w-3xl lg:px-16 xl:px-24">
-        <h1 className="animate-fade-in text-4xl font-bold leading-[1.05] tracking-tight text-primary sm:text-5xl md:text-8xl lg:text-9xl">
-          Hello.
-        </h1>
-        <p
-          className="mt-3 animate-fade-in text-xl font-bold tracking-wide text-accent sm:text-2xl md:text-4xl"
-          style={{ animationDelay: '200ms' }}
+      <div className="shrink-0 flex justify-center pt-6 lg:pt-2 animate-fade-in animation-delay-800">
+        <a
+          href="#about"
+          className="flex flex-col items-center gap-1 text-muted-foreground hover:text-primary transition-colors group"
         >
-          I'm Eliseu Milanês
-        </p>
+          <ChevronDown className="w-6 h-6 animate-bounce" />
+        </a>
       </div>
     </section>
   )

@@ -1,6 +1,6 @@
 import { Button } from '@/components/Button'
 import { Menu, X } from 'lucide-react'
-import { useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 
 const navLinks = [
   { label: 'About', href: '#about' },
@@ -8,36 +8,73 @@ const navLinks = [
   { label: 'Contact', href: '#contact' },
 ]
 
+const NEUTRAL_THRESHOLD = 50   // até aqui: neutro
+const HIDE_THRESHOLD = 150     // a partir daqui, scrollando pra baixo: esconde
+
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [navState, setNavState] = useState('neutral') // 'neutral' | 'raised' | 'hidden'
+  const lastScrollY = useRef(0)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      const isScrollingDown = currentScrollY > lastScrollY.current
+
+      if (currentScrollY < NEUTRAL_THRESHOLD) {
+        // topo da página -> sempre neutro, independente da direção
+        setNavState('neutral')
+      } else if (isScrollingDown && currentScrollY > HIDE_THRESHOLD) {
+        // passou do limite E continua descendo -> esconde
+        setNavState('hidden')
+      } else {
+        // scrollando pra cima, ou ainda na faixa intermediária -> levantado
+        setNavState('raised')
+      }
+
+      lastScrollY.current = currentScrollY
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const isRaised = navState === 'raised'
+  const isHidden = navState === 'hidden'
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent py-5">
-      <nav className="container mx-auto flex items-center justify-between px-6">
+    <header
+      className={`fixed left-1/2 top-4 z-50 w-[calc(100%-2rem)] md:w-fit md:max-w-[calc(100%-2rem)] -translate-x-1/2 rounded-full transition-all duration-500
+  ${isRaised ? 'py-3 max-md:bg-background max-md:shadow-lg' : 'py-3'}
+  ${isHidden ? '-translate-y-32 opacity-0' : 'translate-y-0 opacity-100'}
+`}
+
+    >
+      <nav className="flex items-center justify-between gap-8 px-6 md:justify-start">
         <a href="#" className="inline-flex shrink-0 items-center">
           <img
-            src="/logo(1).png"
+            src="/logo-crop.png"
             alt="Eliseu Milanês"
-            className="h-25 w-25 rounded-full"
+            className="h-10 w-10 rounded-3x1"
           />
         </a>
 
         <div className="hidden items-center gap-1 md:flex">
-          <div className="glass flex items-center gap-1 rounded-full px-2 py-1">
+          <div
+            className={`flex items-center gap-1 rounded-full px-2 py-1 transition-all duration-500
+            ${isRaised ? 'neo-soft' : 'bg-transparent'}
+          `}
+          >
             {navLinks.map((link, index) => (
               <a
-                href={link.href}
                 key={index}
-                className="trasition-colors rounded-full px-4 py-2 text-sm text-muted-foreground duration-300 hover:bg-primary hover:text-primary-foreground"
+                href={link.href}
+                className="rounded-full px-4 py-2 text-sm text-muted-foreground transition-colors duration-300 hover:bg-primary hover:text-primary-foreground"
               >
                 {link.label}
               </a>
             ))}
           </div>
-        </div>
-
-        <div className="hidden md:block">
-          <Button size="sm">Contact Me</Button>
         </div>
 
         <button
@@ -52,12 +89,12 @@ export const Navbar = () => {
       </nav>
 
       {isMobileMenuOpen && (
-        <div className="glass-strong animate-fade-in md:hidden">
-          <div className="container mx-auto flex flex-col gap-4 px-6 py-6">
+        <div className="neo mt-2 animate-slide-down rounded-2xl md:hidden">
+          <div className="flex flex-col gap-4 px-6 py-6">
             {navLinks.map((link, index) => (
               <a
-                href={link.href}
                 key={index}
+                href={link.href}
                 className="py-2 text-lg text-muted-foreground hover:text-foreground"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
