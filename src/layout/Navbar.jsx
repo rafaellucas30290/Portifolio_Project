@@ -51,25 +51,25 @@ export const Navbar = () => {
 
     >
       <nav className="flex items-center justify-between gap-8 px-6 md:justify-start">
-        <a href="#" className="inline-flex shrink-0 items-center">
+        <a href="#" className="md:hidden inline-flex shrink-0 items-center">
           <img
             src="/logo-crop.png"
             alt="Eliseu Milanês"
-            className="h-10 w-10 rounded-3x1"
+            className="h-12 w-12 rounded-3x1"
           />
         </a>
 
         <div className="hidden items-center gap-1 md:flex">
           <div
             className={`flex items-center gap-1 rounded-full px-2 py-1 transition-all duration-500
-            ${isRaised ? 'neo-soft' : 'bg-transparent'}
+            ${isRaised ? 'neo' : 'bg-transparent'}
           `}
           >
             {navLinks.map((link, index) => (
               <a
                 key={index}
                 href={link.href}
-                className="rounded-full px-4 py-2 text-sm text-muted-foreground transition-colors duration-300 hover:bg-primary hover:text-primary-foreground"
+                className="rounded-full px-4 py-2 text-sm text-muted-foreground transition-all duration-300 hover:shadow-[inset_2px_2px_4px_var(--color-shadow-dark),inset_-2px_-2px_4px_var(--color-shadow-light)] hover:text-foreground"
               >
                 {link.label}
               </a>
@@ -89,7 +89,7 @@ export const Navbar = () => {
       </nav>
 
       {isMobileMenuOpen && (
-        <div className="neo mt-2 animate-slide-down rounded-2xl md:hidden">
+        <div className="neo mt-2 animate-slide-down md:hidden">
           <div className="flex flex-col gap-4 px-6 py-6">
             {navLinks.map((link, index) => (
               <a

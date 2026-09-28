@@ -5,13 +5,13 @@
   --color-surface: #F0F0ED;
   --color-muted: #E0E4EE;
 
-  --color-foreground: #1A317A;
+  --color-foreground: #003566;
   --color-muted-foreground: #4A5568;
 
-  --color-primary: #1A317A;
+  --color-primary: #003566;
   --color-primary-foreground: #FFFFFF;
 
-  --color-secondary: #F5C100;
+  --color-secondary: #FFC300;
 
 
   --color-accent: #E31E24;
@@ -118,6 +118,9 @@
         inset 3px 3px 6px var(--color-shadow-dark),
         inset -3px -3px 6px var(--color-shadow-light);
     }
+
+
+    
 
     /* botao com feedback ao clicar */
     .neo-button {
