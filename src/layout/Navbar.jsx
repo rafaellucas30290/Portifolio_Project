@@ -40,22 +40,22 @@ export const Navbar = () => {
   }, [])
 
   const isRaised = navState === 'raised'
-  const isHidden = navState === 'hidden'
+  const isHidden = navState === 'hidden' && !isMobileMenuOpen // não esconde com o menu aberto
 
   return (
     <header
-      className={`fixed left-1/2 top-4 z-50 w-[calc(100%-2rem)] md:w-fit md:max-w-[calc(100%-2rem)] -translate-x-1/2 rounded-full transition-all duration-500
-  ${isRaised ? 'py-3 max-md:bg-background max-md:shadow-lg' : 'py-3'}
-  ${isHidden ? '-translate-y-32 opacity-0' : 'translate-y-0 opacity-100'}
-`}
-
+      inert={isHidden}
+      className={`fixed left-1/2 top-4 z-50 w-[calc(100%-2rem)] md:w-fit md:max-w-[calc(100%-2rem)] -translate-x-1/2 rounded-full py-3 transition-all duration-500
+    ${isRaised ? 'max-md:bg-background max-md:shadow-lg' : ''}
+    ${isHidden ? '-translate-y-32 opacity-0 pointer-events-none' : 'translate-y-0 opacity-100'}
+  `}
     >
       <nav className="flex items-center justify-between gap-8 px-6 md:justify-start">
-        <a href="#" className="md:hidden inline-flex shrink-0 items-center">
+        <a href="#" className="lg:hidden inline-flex shrink-0 items-center">
           <img
             src="/logo-crop.png"
             alt="Eliseu Milanês"
-            className="h-12 w-12 rounded-3x1"
+            className="h-12 w-12 rounded-3xl"
           />
         </a>
 
@@ -89,7 +89,7 @@ export const Navbar = () => {
       </nav>
 
       {isMobileMenuOpen && (
-        <div className="neo mt-2 animate-slide-down md:hidden">
+        <div className="neo absolute left-0 right-0 top-full mt-2 animate-slide-down rounded-3xl md:hidden">
           <div className="flex flex-col gap-4 px-6 py-6">
             {navLinks.map((link, index) => (
               <a
@@ -101,7 +101,6 @@ export const Navbar = () => {
                 {link.label}
               </a>
             ))}
-            <Button>Contact Me</Button>
           </div>
         </div>
       )}
