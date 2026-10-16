@@ -4,7 +4,7 @@ export const Hero = () => {
   return (
     <section className="relative min-h-screen lg:h-screen flex flex-col overflow-hidden pt-28 lg:pt-24 pb-2 lg:pb-8">
       {/* Content */}
-      <div className="container mx-auto px-8 lg:px-2 max-w-6xl flex-1 flex flex-col justify-center relative z-10 lg:min-h-0">
+      <div className="container mx-auto px-8 max-w-6xl flex-1 flex flex-col justify-center relative z-10 lg:min-h-0">
         <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-16 lg:gap-8 items-start">
           {/* Left Content - Text */}
           <div className="space-y-5 lg:space-y-5">
