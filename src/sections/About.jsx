@@ -31,39 +31,34 @@ export const About = () => {
   return (
     <section id="about" className="relative overflow-hidden py-32">
       <div className="container relative z-10 mx-auto px-6 lg:px-24">
-        <div className="grid items-start gap-24 lg:grid-cols-2">
-          {/* Left column */}
-          <div className="space-y-6">
-            <div className="animate-fade-in">
-              <span className="text-sm font-semibold uppercase tracking-wider text-secondary/80">
-                Sobre Mim
-              </span>
-            </div>
+        <div className="grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-16">
+          {/* Coluna esquerda */}
+          <div className="min-w-0">
+            <span className="animate-fade-in block text-sm font-semibold uppercase tracking-wider text-secondary">
+              Sobre Mim
+            </span>
 
-            <h2 className="animate-fade-in animation-delay-200 text-5xl font-bold leading-tight lg:text-6xl">
-              Educador <span className="text-secondary/80">&</span>
-              <span className="ml-8 block text-primary lg:ml-32">
+            <h2 className="animate-fade-in animation-delay-200 mb-6 mt-4 text-4xl font-bold leading-tight sm:text-5xl lg:text-5xl xl:text-6xl">
+              Educador <span className="text-secondary">&</span>
+              <span className="ml-6 block text-primary sm:ml-12 xl:ml-24">
                 Pesquisador
               </span>
             </h2>
 
-            <div className="animate-fade-in animation-delay-200 px-2 text-justify leading-relaxed text-muted-foreground/90 hyphens-auto">
-              <p>
-                Profissional com experiência em docência e gestão escolar,
-                atuando em Língua Portuguesa, Literatura e Língua Inglesa.
-                Desenvolve práticas pedagógicas ativas, inclusivas e dialógicas,
-                com atenção à mediação de conflitos e ao trabalho com estudantes
-                neurodivergentes. Destaca-se pela comunicação clara,
-                organização, proatividade e manejo de turmas numerosas.
-                Desenvolve pesquisas em Teoria e Crítica Literária, com ênfase
-                em interpretação, subjetividade e literatura como prática de
-                formação humana.
-              </p>
-            </div>
+            <p className="animate-fade-in animation-delay-200 hyphens-auto text-justify leading-relaxed text-muted-foreground/90">
+              Profissional com experiência em docência e gestão escolar,
+              atuando em Língua Portuguesa, Literatura e Língua Inglesa.
+              Desenvolve práticas pedagógicas ativas, inclusivas e dialógicas,
+              com atenção à mediação de conflitos e ao trabalho com estudantes
+              neurodivergentes. Destaca-se pela comunicação clara, organização,
+              proatividade e manejo de turmas numerosas. Desenvolve pesquisas
+              em Teoria e Crítica Literária, com ênfase em interpretação,
+              subjetividade e literatura como prática de formação humana.
+            </p>
           </div>
 
-          {/* Right column - Highlights */}
-          <div className="grid gap-6 sm:grid-cols-2">
+          {/* Coluna direita: destaques */}
+          <div className="grid min-w-0 gap-6 sm:grid-cols-2">
             {highlights.map((item, idx) => (
               <div
                 key={item.title}
@@ -71,7 +66,10 @@ export const About = () => {
                 style={{ animationDelay: `${(idx + 1) * 200}ms` }}
               >
                 <div className="neo-soft mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/90 transition-all hover:bg-primary/70">
-                  <item.icon className="h-6 w-6 text-secondary" aria-hidden="true" />
+                  <item.icon
+                    className="h-6 w-6 text-secondary"
+                    aria-hidden="true"
+                  />
                 </div>
                 <h3 className="mb-2 font-semibold">{item.title}</h3>
                 <p className="text-sm text-muted-foreground/80">

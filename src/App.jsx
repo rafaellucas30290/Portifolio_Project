@@ -3,6 +3,7 @@ import { About } from '@/sections/About'
 import { Experience } from '@/sections/Experience'
 import { Contact } from '@/sections/Contact'
 import { Navbar } from '@/layout/Navbar'
+import { Testimonials } from './sections/|Testimonials'
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
         <Hero />
         <About />
         <Experience />
+        <Testimonials/>
         <Contact />
       </main>
     </div>
