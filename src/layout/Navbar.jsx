@@ -1,4 +1,3 @@
-import { Button } from '@/components/Button'
 import { Menu, X } from 'lucide-react'
 import { useEffect, useState, useRef } from 'react'
 
@@ -45,19 +44,12 @@ export const Navbar = () => {
   return (
     <header
       inert={isHidden}
-      className={`fixed left-1/2 top-4 z-50 w-[calc(100%-2rem)] md:w-fit md:max-w-[calc(100%-2rem)] -translate-x-1/2 rounded-full py-3 transition-all duration-500
-    ${isRaised ? 'max-md:bg-background max-md:shadow-lg' : ''}
+      className={`fixed inset-x-0 top-0 z-50 w-full rounded-none py-1 md:inset-x-auto md:top-4 md:left-1/2 md:w-fit md:max-w-[calc(100%-2rem)] md:-translate-x-1/2 md:rounded-full md:py-3 max-md:border-b max-md:shadow-md transition-[transform,opacity,background-color,border-color,box-shadow] md:transition-all duration-500
+    ${isRaised ? 'max-md:bg-background max-md:border-border max-md:shadow-black/10' : 'max-md:border-transparent max-md:shadow-transparent'}
     ${isHidden ? '-translate-y-32 opacity-0 pointer-events-none' : 'translate-y-0 opacity-100'}
   `}
     >
-      <nav className="flex items-center justify-between gap-8 px-6 md:justify-start">
-        <a href="#" className="lg:hidden inline-flex shrink-0 items-center">
-          <img
-            src="/logo-crop.png"
-            alt="Eliseu Milanês"
-            className="h-12 w-12 rounded-3xl"
-          />
-        </a>
+      <nav className="flex items-center justify-end gap-8 px-4 md:justify-start md:px-6">
 
         <div className="hidden items-center gap-1 md:flex">
           <div
@@ -89,7 +81,7 @@ export const Navbar = () => {
       </nav>
 
       {isMobileMenuOpen && (
-        <div className="neo absolute left-0 right-0 top-full mt-2 animate-slide-down rounded-3xl md:hidden">
+        <div className="neo absolute inset-x-0 top-full animate-slide-down rounded-none md:hidden">
           <div className="flex flex-col gap-4 px-6 py-6">
             {navLinks.map((link, index) => (
               <a

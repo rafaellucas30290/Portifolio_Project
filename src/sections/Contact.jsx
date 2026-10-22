@@ -32,24 +32,19 @@ export const Contact = () => {
   }
 
   return (
-    <section id="contact" className="relative flex min-h-screen items-center overflow-hidden pb-16 pt-18">
-      {/* Blurs decorativos */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/4 top-1/4 h-96 w-96 rounded-full bg-primary-foreground/5 blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 h-64 w-64 rounded-full bg-highlight/5 blur-3xl" />
-      </div>
+    <section id="contact" className="relative flex items-center overflow-hidden  pb-24 lg:pb-24 min-h-svh">
 
-      <div className="container relative z-10 mx-auto grid gap-12 px-6 lg:grid-cols-2 lg:items-center lg:gap-24 lg:px-24">
+      <div className="container relative z-10 mx-auto grid gap-8 px-8 lg:grid-cols-2 lg:items-center lg:gap-24 lg:px-24">
         {/* Coluna esquerda */}
         <div className="min-w-0">
           <span className="animate-fade-in block text-sm font-medium uppercase tracking-wider text-secondary">
             Vamos Conversar
           </span>
-          <h2 className="animate-fade-in animation-delay-100 mb-6 mt-4 text-3xl font-bold leading-tight text-primary lg:text-5xl">
-            Palavras também aproximam pessoas
+          <h2 className="animate-fade-in animation-delay-100 mb-4 mt-4 text-xl font-bold leading-tight text-primary lg:mb-6 lg:text-5xl">
+            Palavras aproximam pessoas
             <span className="text-secondary">.</span>
           </h2>
-          <p className="animate-fade-in animation-delay-200 hyphens-auto text-justify leading-relaxed text-muted-foreground/80">
+          <p className="animate-fade-in animation-delay-200 hyphens-auto text-sm lg:text-base text-justify leading-relaxed text-muted-foreground/80">
             Se você deseja saber mais sobre meu trabalho, propor uma parceria
             ou simplesmente iniciar uma conversa sobre linguagens, literatura e
             educação, entre em contato. Será um prazer ouvir você.

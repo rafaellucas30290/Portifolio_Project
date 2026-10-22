@@ -2,35 +2,38 @@ import { ChevronDown } from 'lucide-react'
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen lg:h-screen flex flex-col overflow-hidden pt-28 lg:pt-24 pb-2 lg:pb-8">
+    <section className="relative h-svh min-h-136 lg:h-screen lg:min-h-screen flex flex-col overflow-hidden pt-18 pb-6 lg:pb-8">
       {/* Content */}
-      <div className="container mx-auto px-8 max-w-6xl flex-1 flex flex-col justify-center relative z-10 lg:min-h-0">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-16 lg:gap-8 items-start">
+      <div className="container mx-auto px-8 max-w-6xl flex-1 flex flex-col justify-center relative z-10 min-h-0">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-16 lg:gap-8 items-start max-lg:gap-5">
           {/* Left Content - Text */}
-          <div className="space-y-5 lg:space-y-5">
+          <div className="space-y-2 lg:space-y-5">
 
 
             {/* Headline */}
             <div className="space-y-4 sm:px-2">
-              <h1 className="text-6xl  lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-200">
-                <span className="block">Eliseu</span>
-                <span className="ml-16 ">Milanês<span className='text-secondary'>.</span></span>
+              <h1 className="text-[clamp(2.5rem,13vw,4rem)] sm:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-200">
+                <span className="block lg:ml-6">Eliseu</span>
+                <span className="ml-[2.0em] lg:ml-24">Milanês<span className="text-secondary">.</span></span>
               </h1>
 
-              <p className="text-sm lg:text-base text-muted-foreground/80 max-w-md leading-relaxed text-justify lg:ml-32 animate-fade-in hyphens-auto animation-delay-400">
+              <p className="text-[clamp(0.875rem,4.1vw,1.125rem)] lg:text-base text-muted-foreground/80 max-w-md leading-relaxed text-justify lg:ml-32 animate-fade-in hyphens-auto animation-delay-400">
                 Professor de Língua Portuguesa e Inglesa, apaixonado pela educação, literatura e formação do pensamento crítico. Sua prática une conhecimento, diálogo e sensibilidade para tornar o aprendizado uma experiência significativa.
               </p>
             </div>
           </div>
 
           {/* Right Content - Profile Pic */}
-          <div className='relative animate-fade-in animation-delay-300'>
-            <div className='relative max-w-90 max-h-110 mx-auto'>
+          <div
+          aria-hidden="true" 
+          className='relative animate-fade-in animation-delay-300 max-lg:flex max-lg:justify-center'>
+            <div className='relative max-w-100 max-h-120 mx-auto '>
               <div className='relative neo rounded-4xl'>
+                {/* Mobile: altura = o que sobra na tela depois do texto (proporção 4:5 mantida, sem corte) */}
                 <img
                   src='/eliseu_new.png'
                   alt='Eliseu Milanês'
-                  className='w-full lg:w-auto lg:h-full aspect-4/5 object-cover rounded-4xl'
+                  className='w-full lg:w-auto lg:h-full max-lg:w-auto max-lg:h-[max(10rem,min(calc(min(100vw-4rem,22.5rem)*1.25),calc(100svh-min(76vw,21rem)-8.5rem)))] aspect-4/5 object-cover rounded-4xl'
                 />
               </div>
             </div>
@@ -38,7 +41,7 @@ export const Hero = () => {
         </div>
       </div>
 
-      <div className="shrink-0 flex justify-center pt-6 lg:pt-2 animate-fade-in animation-delay-800">
+      <div className="shrink-0 hidden lg:flex justify-center pt-2 animate-fade-in animation-delay-800">
         <a
           href="#about"
           className="flex flex-col items-center gap-1 text-muted-foreground hover:text-primary transition-colors group"
