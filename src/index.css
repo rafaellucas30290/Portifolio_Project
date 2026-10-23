@@ -129,6 +129,26 @@
       inset -3px -3px 6px var(--color-shadow-light);
   }
 
+  /* card neumórfico que "levanta" no hover */
+  .neo-lift {
+    background-color: var(--color-surface);
+    border-radius: var(--radius);
+    box-shadow:
+      3px 3px 6px var(--color-shadow-dark),
+      -2px -2px 4px var(--color-shadow-light);
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+  }
+
+  .neo-lift:hover {
+    transform: translateY(-6px);
+    box-shadow:
+      6px 8px 16px var(--color-shadow-dark),
+      -4px -4px 12px var(--color-shadow-light);
+  }
+
+  .neo-lift:active {
+    transform: translateY(-1px);
+  }
 
 
 
@@ -194,16 +214,16 @@
   }
 
   @keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
-}
 
   @keyframes slide-down {
     from {

@@ -2,9 +2,9 @@ import { Menu, X } from 'lucide-react'
 import { useEffect, useState, useRef } from 'react'
 
 const navLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Sobre', href: '#about' },
+  { label: 'Experiência', href: '#experience' },
+  { label: 'Contato', href: '#contact' },
 ]
 
 const NEUTRAL_THRESHOLD = 50   // até aqui: neutro

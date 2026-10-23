@@ -37,7 +37,7 @@ export const Experience = () => {
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="max-w-3xl mb-12">
-          <span className="text-secondary text-sm font-medium tracking-wider uppercase animate-fade-in">
+          <span className="animate-fade-in block text-sm font-semibold uppercase tracking-wider text-secondary">
             Jornada Profissional
           </span>
           <h2 className="mt-4 text-4xl sm:text-5xl font-bold animate-fade-in">
@@ -71,7 +71,7 @@ export const Experience = () => {
                       : "md:col-start-2 md:pl-10 lg:pl-16"
                   }`}
                 >
-                  <div className="neo p-5 sm:p-6 rounded-2xl">
+                  <div className="neo-lift p-5 sm:p-6 rounded-2xl">
                     <h3 className="mt-2 text-lg md:text-xl font-semibold">{exp.role}</h3>
                     <p className="mt-3 text-sm text-muted-foreground">{exp.description}</p>
                   </div>

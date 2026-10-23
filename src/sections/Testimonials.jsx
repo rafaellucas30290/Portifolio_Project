@@ -47,7 +47,7 @@ export const Testimonials = () => {
       <div className="container relative z-10 mx-auto grid gap-8 px-8 lg:grid-cols-2 lg:items-start lg:gap-16 lg:px-24">
         {/* Coluna esquerda: cabeçalho */}
         <div className="min-w-0">
-          <span className="animate-fade-in block text-sm font-medium uppercase tracking-wider text-secondary">
+          <span className="animate-fade-in block text-sm font-semibold uppercase tracking-wider text-secondary">
             Palavras dos Alunos
           </span>
           <h2 className="animate-fade-in animation-delay-200 mb-4 mt-4 text-2xl  font-bold leading-tight sm:text-5xl lg:mb-6">

@@ -11,13 +11,15 @@ export const Hero = () => {
 
 
             {/* Headline */}
-            <div className="space-y-4 sm:px-2">
-              <h1 className="text-[clamp(2.5rem,13vw,4rem)] sm:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-200">
+            <div className="space-y-6 sm:space-y-4 sm:px-2">
+              <h1 className="text-[clamp(3rem,16vw,4.5rem)] sm:text-6xl lg:text-7xl font-bold leading-[1.05] animate-fade-in animation-delay-200">
                 <span className="block lg:ml-6">Eliseu</span>
-                <span className="ml-[2.0em] lg:ml-24">Milanês<span className="text-secondary">.</span></span>
+                <span className="ml-[1.0em] lg:ml-24">
+                  Milanês<span className="text-secondary">.</span>
+                </span>
               </h1>
 
-              <p className="text-[clamp(0.875rem,4.1vw,1.125rem)] lg:text-base text-muted-foreground/80 max-w-md leading-relaxed text-justify lg:ml-32 animate-fade-in hyphens-auto animation-delay-400">
+              <p className="text-[clamp(1rem,4.6vw,1.25rem)] lg:text-base text-muted-foreground/80 max-w-md leading-relaxed text-justify lg:ml-32 animate-fade-in hyphens-auto animation-delay-400">
                 Professor de Língua Portuguesa e Inglesa, apaixonado pela educação, literatura e formação do pensamento crítico. Sua prática une conhecimento, diálogo e sensibilidade para tornar o aprendizado uma experiência significativa.
               </p>
             </div>
@@ -25,10 +27,10 @@ export const Hero = () => {
 
           {/* Right Content - Profile Pic */}
           <div
-          aria-hidden="true" 
-          className='relative animate-fade-in animation-delay-300 max-lg:flex max-lg:justify-center'>
+            aria-hidden="true"
+            className='relative animate-fade-in animation-delay-300 hidden sm:flex sm:justify-center lg:block'>
             <div className='relative max-w-100 max-h-120 mx-auto '>
-              <div className='relative neo rounded-4xl'>
+              <div className='relative neo-lift rounded-4xl'>
                 {/* Mobile: altura = o que sobra na tela depois do texto (proporção 4:5 mantida, sem corte) */}
                 <img
                   src='/eliseu_new.png'

@@ -37,7 +37,7 @@ export const Contact = () => {
       <div className="container relative z-10 mx-auto grid gap-8 px-8 lg:grid-cols-2 lg:items-center lg:gap-24 lg:px-24">
         {/* Coluna esquerda */}
         <div className="min-w-0">
-          <span className="animate-fade-in block text-sm font-medium uppercase tracking-wider text-secondary">
+          <span className="animate-fade-in block text-sm font-semibold uppercase tracking-wider text-secondary">
             Vamos Conversar
           </span>
           <h2 className="animate-fade-in animation-delay-100 mb-4 mt-4 text-xl font-bold leading-tight text-primary lg:mb-6 lg:text-5xl">

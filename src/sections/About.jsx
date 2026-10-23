@@ -15,9 +15,9 @@ const highlights = [
   },
   {
     icon: Brain,
-    title: 'Aplicação da Psicologia e Psicanálise',
+    title: 'Aplicação da Psicologia',
     description:
-      'Integra fundamentos da Psicologia e da Psicanálise à prática educativa.',
+      'Valoriza a singularidade dos estudantes, considerando suas emoções, comportamentos, formas de aprender e fatores psicológicos que influenciam as relações e os processos educativos.',
   },
   {
     icon: Lightbulb,
@@ -43,7 +43,7 @@ export const About = () => {
               <span className="block ml-24">Pesquisador.</span>
             </h2>
 
-            <p className="text-sm lg:mr-24 md:text-base animate-fade-in animation-delay-200 hyphens-auto text-justify leading-relaxed text-muted-foreground/90">
+            <p className="text-sm lg:mr-10 md:text-base animate-fade-in animation-delay-200 hyphens-auto text-justify leading-relaxed text-muted-foreground/90">
               Profissional com experiência em docência e gestão escolar,
               atuando em Língua Portuguesa, Literatura e Língua Inglesa.
               Desenvolve práticas pedagógicas ativas, inclusivas e dialógicas,
@@ -60,17 +60,17 @@ export const About = () => {
             {highlights.map((item, idx) => (
               <div
                 key={item.title}
-                className="neo-soft animate-fade-in rounded-3xl p-5 sm:p-6"
+                className="neo-lift animate-fade-in rounded-3xl p-5 sm:p-6"
                 style={{ animationDelay: `${(idx + 1) * 200}ms` }}
               >
-                <div className="neo-soft mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/90 transition-all hover:bg-primary/70">
+                <div className="neo-soft mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/90 ">
                   <item.icon
                     className="h-6 w-6 text-secondary"
                     aria-hidden="true"
                   />
                 </div>
                 <h3 className="mb-2 font-semibold">{item.title}</h3>
-                <p className="text-sm text-muted-foreground/80">
+                <p className="text-sm hyphens-auto text-muted-foreground/80">
                   {item.description}
                 </p>
               </div>
