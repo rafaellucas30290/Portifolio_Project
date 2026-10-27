@@ -33,6 +33,15 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
+  }
+  section{
+    scroll-snap-align: start;
+  }
+  @media (min-width: 64rem) and (min-height: 40rem){
+    html {
+      scroll-snap-type: y proximity mandatory;
+    }
   }
 
   body {

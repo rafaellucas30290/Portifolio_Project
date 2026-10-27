@@ -32,7 +32,7 @@ export const Contact = () => {
   }
 
   return (
-    <section id="contact" className="relative flex items-center overflow-hidden  pb-24 lg:pb-24 min-h-svh">
+    <section id="contact" className="relative flex items-center snap-start pb-24 lg:pb-12 min-h-svh">
 
       <div className="container relative z-10 mx-auto grid gap-8 px-8 lg:grid-cols-2 lg:items-center lg:gap-24 lg:px-24">
         {/* Coluna esquerda */}

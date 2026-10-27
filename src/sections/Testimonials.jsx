@@ -43,8 +43,8 @@ export const Testimonials = () => {
   const item = testimonials[activeIdx]
 
   return (
-    <section id="testimonials" className="relative overflow-hidden py-16 lg:py-24">
-      <div className="container relative z-10 mx-auto grid gap-8 px-8 lg:grid-cols-2 lg:items-start lg:gap-16 lg:px-24">
+    <section id="testimonials" className="relative flex min-h-svh snap-start items-center pt-24 pb-10 lg:pt-12 lg:pb-6">
+      <div className="container relative z-10 mx-auto grid gap-8 px-8 lg:grid-cols-2 lg:items-center lg:gap-10 lg:px-12 xl:gap-16 xl:px-24">
         {/* Coluna esquerda: cabeçalho */}
         <div className="min-w-0">
           <span className="animate-fade-in block text-sm font-semibold uppercase tracking-wider text-secondary">
@@ -63,7 +63,7 @@ export const Testimonials = () => {
 
         {/* Coluna direita: balão + navegação */}
         <div className="min-w-0">
-          <div className="neo animate-fade-in animation-delay-200 relative rounded-3xl p-6 sm:p-8 md:p-12">
+          <div className="neo animate-fade-in animation-delay-200 relative rounded-3xl p-6 sm:p-8 lg:p-8 xl:p-12">
             <div className="absolute -top-4 left-8 flex h-12 w-12 items-center justify-center rounded-full bg-secondary">
               <Quote className="h-6 w-6 text-primary-foreground" aria-hidden="true" />
             </div>
@@ -75,7 +75,7 @@ export const Testimonials = () => {
             >
               <div ref={contentRef}>
                 <figure key={activeIdx} className="animate-fade-in">
-                  <blockquote className="mb-8 text-base sm:text-lg lg:text-2xl font-medium leading-relaxed ">
+                  <blockquote className="mb-6 text-base sm:text-lg xl:text-2xl font-medium leading-relaxed">
                     “{item.quote}”
                   </blockquote>
                   <figcaption className="text-sm text-muted-foreground">

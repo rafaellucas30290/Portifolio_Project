@@ -29,9 +29,9 @@ const highlights = [
 
 export const About = () => {
   return (
-    <section id="about" className="relative overflow-hidden py-24 lg:py-32">
-      <div className="container relative z-10 mx-auto px-8 lg:px-24">
-        <div className="grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-16">
+    <section id="about" className="relative flex min-h-svh snap-start items-center pt-24 pb-10 lg:pt-12 lg:pb-4">
+      <div className="container relative z-10 mx-auto px-8 lg:px-12 xl:px-24">
+        <div className="grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-10 xl:gap-16">
           {/* Coluna esquerda */}
           <div className="min-w-0">
             <span className="animate-fade-in block text-sm font-semibold uppercase tracking-wider text-secondary">
@@ -56,11 +56,11 @@ export const About = () => {
           </div>
 
           {/* Coluna direita: destaques */}
-          <div className="grid min-w-0 gap-6 sm:grid-cols-2">
+          <div className="grid min-w-0 gap-6 sm:grid-cols-2 lg:gap-4">
             {highlights.map((item, idx) => (
               <div
                 key={item.title}
-                className="neo-lift animate-fade-in rounded-3xl p-5 sm:p-6"
+                className="neo-lift animate-fade-in rounded-3xl p-5 sm:p-6 lg:p-4 xl:p-6"
                 style={{ animationDelay: `${(idx + 1) * 200}ms` }}
               >
                 <div className="neo-soft mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/90 ">

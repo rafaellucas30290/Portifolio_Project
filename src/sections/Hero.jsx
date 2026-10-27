@@ -2,7 +2,7 @@ import { ChevronDown } from 'lucide-react'
 
 export const Hero = () => {
   return (
-    <section className="relative h-svh min-h-136 lg:h-screen lg:min-h-screen flex flex-col overflow-hidden pt-18 pb-6 lg:pb-8">
+    <section className="snap-start relative h-svh min-h-136 lg:h-screen lg:min-h-screen flex flex-col pt-18 pb-6 lg:pb-8">
       {/* Content */}
       <div className="container mx-auto px-8 max-w-6xl flex-1 flex flex-col justify-center relative z-10 min-h-0">
         <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-16 lg:gap-8 items-start max-lg:gap-5">
