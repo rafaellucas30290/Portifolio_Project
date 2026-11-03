@@ -15,9 +15,9 @@ Landing page de uma página só (single page), organizada em seções que guiam 
 ## 📑 Seções
 
 - **Hero:** apresentação inicial com destaque visual
-- **Sobre:** resumo do perfil e da trajetória profissional
-- **Experiência:** histórico profissional e competências
-- **Depoimentos:** feedback de clientes e parceiros
+- **Sobre:** resumo do perfil e competências
+- **Experiência:** histórico profissional e trajetória profissional
+- **Depoimentos:** feedback de alunos
 - **Contato:** formas de entrar em contato
 
 ## 🛠️ Tecnologias
