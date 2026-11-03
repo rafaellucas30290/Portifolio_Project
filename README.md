@@ -2,7 +2,7 @@
 
 Site de portfólio pessoal desenvolvido sob demanda como projeto freelancer, com foco em apresentar a trajetória, a experiência e os contatos do profissional de forma moderna, rápida e responsiva.
 
-🔗 **Demo:** [adicione aqui o link do site publicado](https://portifolio-eliseu.vercel.app/)
+🔗 **Demo:** [portifolio.vercel.app](https://portifolio-eliseu.vercel.app/)
 
 
 ![Preview do portfólio](https://i.imgur.com/ACOOy8C.png)
